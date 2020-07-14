@@ -1,4 +1,4 @@
-'use strict'; // ajuda o slint a checar erros
+'use strict';
 
 const express = require('express');
 const router = express.Router();
