@@ -7,10 +7,11 @@ const monggose = require('mongoose');
 const app = express();
 
 // Carrega os Models
-// const Webhook = require('./models/webhook');
+const Lead = require('./models/lead-model');
 
 // Carrega as Rotas
 const indexRoute = require('./routes/index-route');
+const leadRoute = require('./routes/lead-route');
 
 // converter o body com o bodyParser
 app.use(bodyParser.json({
@@ -32,5 +33,6 @@ app.use(function(req, res, next){
 });
 
 app.use('/', indexRoute);
+app.use('/create', leadRoute);
 
 module.exports = app;
