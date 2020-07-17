@@ -1,2 +1,2 @@
 # land-page-api
-Api para página LandPage Click Lead, usando a Firestore database
+- Api para página LandPage Click Lead, usando a Firestore database
