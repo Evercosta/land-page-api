@@ -1,18 +1,23 @@
 'use strict';
 
 var nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 var transporte = nodemailer.createTransport({
     service: 'Gmail', // Como mencionei, vamos usar o Gmail
     auth: {
-        user: 'customtrade.suporte@gmail.com', // Basta dizer qual o nosso usuário
-        pass: 'Angular9'             // e a senha da nossa conta
+        user: process.env.SEND_EMAIL_USER, // Basta dizer qual o nosso usuário
+        pass: process.env.SEND_EMAIL_PASS // e a senha da nossa conta
     } 
 });
 exports.send = async(to, subject, html) => {    
     // Após configurar o transporte chegou a hora de criar um e-mail
     // para enviarmos, para isso basta criar um objeto com algumas configurações
     var email = {
-        from: 'customtrade.suporte@gmail.com', // Quem enviou este e-mail
+        from: process.env.SEND_EMAIL_USER, // Quem enviou este e-mail
         to, // Quem receberá
         subject,  // Um assunto ♥ 
         html // O conteúdo do e-mail
