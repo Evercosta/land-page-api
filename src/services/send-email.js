@@ -7,7 +7,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var transporte = nodemailer.createTransport({
-    service: 'Gmail', // Como mencionei, vamos usar o Gmail
+    // service: 'Gmail', // Como mencionei, vamos usar o Gmail
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, 
     auth: {
         user: process.env.SEND_EMAIL_USER, // Basta dizer qual o nosso usuário
         pass: process.env.SEND_EMAIL_PASS // e a senha da nossa conta
