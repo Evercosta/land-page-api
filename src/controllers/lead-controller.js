@@ -2,6 +2,7 @@
 
 const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/lead-repository');
+const emailService = require('../services/send-email');
 
 exports.post = async(req, res, next) => {
     let contract = new ValidationContract();
@@ -19,6 +20,12 @@ exports.post = async(req, res, next) => {
     try {
         req.body.phone = req.body.phone.trim()
         await repository.create(req.body);
+        // Enviando email
+        emailService.send(
+            process.env.SEND_EMAIL_TO, 
+            'Atenção, novo Lead adicionado', 
+            process.env.SEND_EMAIL_TMPL.replace('{0}', req.body.name)
+        );
         res.status(201).send({ 
             message: 'Lead cadastrado com  sucesso!'
         });
