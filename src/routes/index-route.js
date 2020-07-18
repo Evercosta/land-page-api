@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 router.get('/', (req, res, next)=>{
+    console.log(process.env.FB_TYPE);
     res.status(200).send({
         title: "Node LandPage API",
         version: "1.0.0"
