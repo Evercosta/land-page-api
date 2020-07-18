@@ -26,8 +26,8 @@ exports.post = async(req, res, next) => {
         // Enviando email
         emailService.send(
             process.env.SEND_EMAIL_TO, 
-            'Atenção, novo Lead adicionado', 
-            process.env.SEND_EMAIL_TMPL.replace('{0}', req.body.name)
+            'Atenção, novo Lead adicionado',
+            `<p><strong>${req.body.name}</strong> acabou de se cadastrar no sistema.</p>`
         );
         res.status(201).send({ 
             message: 'Lead cadastrado com  sucesso!'
