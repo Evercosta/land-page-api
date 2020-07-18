@@ -3,6 +3,9 @@
 const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/lead-repository');
 const emailService = require('../services/send-email');
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 exports.post = async(req, res, next) => {
     let contract = new ValidationContract();
