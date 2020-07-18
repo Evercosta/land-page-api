@@ -31,7 +31,7 @@ exports.send = async(to, subject, html) => {
     // que desejamos enviar este e-mail
     transporte.sendMail(email, function(err, info){
         if(err)
-            throw err; // Oops, algo de errado aconteceu.
+            console.log("Email Error: ", err); // Oops, algo de errado aconteceu.
 
         console.log('Email enviado! Leia as informações adicionais: ', info);
     });
