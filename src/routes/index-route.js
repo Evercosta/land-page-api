@@ -12,7 +12,7 @@ router.get('/', (req, res, next)=>{
     emailService.send(
         process.env.SEND_EMAIL_TO, 
         'Atenção, novo Lead adicionado',
-        `<p><strong>${nome}</strong> acabou de se cadastrar no sistema.</p>`
+        '<p><strong>'+nome+'</strong> acabou de se cadastrar no sistema.</p>'
     );
     res.status(200).send({
         title: "Node LandPage API",
