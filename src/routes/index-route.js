@@ -8,8 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 router.get('/', (req, res, next)=>{
-    const nome = 'Nome Teste 3';
-    
+    const nome = 'Nome Teste 4';
+
     console.log('Teste from: ', process.env.SEND_EMAIL_USER);
     console.log('Teste to: ', process.env.SEND_EMAIL_TO);
     console.log('Teste subject: ', 'Atenção, novo Lead adicionado');
