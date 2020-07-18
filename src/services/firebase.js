@@ -16,7 +16,7 @@ admin.initializeApp({
         token_uri: process.env.FB_TOKEN_URI,
         auth_provider_x509_cert_url: process.env.FB_AUTH_PROVIDER_X509_CERT_URL,
         client_x509_cert_url: process.env.FB_CLIENT_X509_CERT_URL
-    })
+      }), databaseURL: process.env.FB_DATA_BASE_URL
 });
 
 module.exports = admin;

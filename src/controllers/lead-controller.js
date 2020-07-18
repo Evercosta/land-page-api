@@ -23,6 +23,7 @@ exports.post = async(req, res, next) => {
             message: 'Lead cadastrado com  sucesso!'
         });
     } catch (e) {
+        console.log('erro', e);
         res.status(500).send({
             message: 'Falha ao processar sua requisição'
         });
