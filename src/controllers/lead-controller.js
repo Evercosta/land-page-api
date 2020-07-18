@@ -25,7 +25,7 @@ exports.post = async(req, res, next) => {
         await repository.create(req.body);
         // Enviando email
         emailService.send(
-            process.env.SEND_EMAIL_TO, 
+            'evercosta@gmail.com', 
             'Atenção, novo Lead adicionado',
             '<p><strong>'+req.body.name+'</strong> acabou de se cadastrar no sistema.</p>'
         );
