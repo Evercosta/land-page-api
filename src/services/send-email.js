@@ -24,6 +24,7 @@ exports.send = async(to, subject, html) => {
         from: process.env.SEND_EMAIL_USER, // Quem enviou este e-mail
         to, // Quem receberá
         subject,  // Um assunto ♥ 
+        text: 'Test',
         html // O conteúdo do e-mail
     };
 
