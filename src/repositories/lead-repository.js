@@ -6,7 +6,7 @@ exports.create = async(data) => {
     const FieldValue = admin.firestore.FieldValue;
     await db.collection('leads').add({
         ...data,
-        status: '',
+        status: 0,
         createdAt: FieldValue.serverTimestamp()
     });
 }
